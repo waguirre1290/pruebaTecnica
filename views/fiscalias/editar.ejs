@@ -1,0 +1,32 @@
+<% include ../layouts/header.ejs %> 
+<form method="post" action="../actualizar/">
+    <input type="text" name="id" value="<%=fiscalia.id_fiscalia %> ">
+    <div class="form-group">
+        <label for="my-input">Nombre</label>
+        <input id="my-input" class="form-control" type="text" name="nombre" value="<%=fiscalia.nombre %>">
+    </div>
+    <div class="form-group">
+        <label for="my-input">Dirección</label>
+        <input id="my-input" class="form-control" type="text" name="direccion" value="<%=fiscalia.direccion %>">
+    </div>
+    <div class="form-group">
+        <label for="my-input">Latitud</label>
+        <input id="my-input" class="form-control" type="text" name="latitud" value="<%=fiscalia.latitud %>">
+    </div>
+    <div class="form-group">
+        <label for="my-input">Longitud</label>
+        <input id="my-input" class="form-control" type="text" name="longitud" value="<%=fiscalia.longitud %>">
+    </div>
+    <div class="form-group">
+        <label for="my-input">Teléfono</label>
+        <input id="my-input" class="form-control" type="text" name="telefono" value="<%=fiscalia.telefono %>">
+    </div>
+    <div class="form-group">
+        <label for="my-input">Encargado</label>
+        <input id="my-input" class="form-control" type="text" name="encargado"value="<%=fiscalia.encargado %>">
+    </div>
+    <div class="form-group">
+        <input id="my-input" class="form-control" type="submit" name="enviar" value="Enviar">
+    </div>
+</form>
+<% include ../layouts/footer.ejs %> 

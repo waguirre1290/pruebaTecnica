@@ -1,0 +1,45 @@
+<%- include ../layouts/header.ejs %> 
+        <a href="/fiscalias/crear" class="btn btn-primary" type="button">Crear</a>
+        <br>
+        <br>
+        <table class="table table-light">
+            <thead class="thead-light">
+                <tr>
+                    <th>ID Fiscalia</th>
+                    <th>Nombre</th>
+                    <th>Direccion</th>
+                    <th>Latitud</th>
+                    <th>Longitud</th>
+                    <th>Telefono</th>
+                    <th>Encargado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for( let fiscalia = 0; fiscalia < fiscalias.length; fiscalia++ ) { %>
+                    <tr>
+                        <td><%=fiscalias[fiscalia].id_fiscalia %> </td>
+                        <td><%=fiscalias[fiscalia].nombre %> </td>
+                        <td><%=fiscalias[fiscalia].direccion %> </td>
+                        <td><%=fiscalias[fiscalia].latitud %> </td>
+                        <td><%=fiscalias[fiscalia].longitud %> </td>
+                        <td><%=fiscalias[fiscalia].telefono %> </td>
+                        <td><%=fiscalias[fiscalia].encargado %> </td>
+                        <td>
+                            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                                <form class="form-inline" method="post" action="/fiscalias/editar/<%=fiscalias[fiscalia].id_fiscalia %>">
+                                    <button class="btn btn-warning" type="submit">Editar</button>
+                                </form>
+                            </div>
+                             <br><br>
+                             <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                                 <form class="form-inline" method="post" action="/fiscalias/eliminar/<%=fiscalias[fiscalia].id_fiscalia %>">
+                                     <button class="btn btn-danger" type="submit">Eliminar</button>
+                                 </form>
+                             </div>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+<% include ../layouts/footer.ejs %> 
